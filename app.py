@@ -30,5 +30,5 @@ if st.button("Predict"):
     prediction = [1]  # Example output (1 = Up, 0 = Down)
 
     st.subheader("Prediction")
-    st.write("📈 The closing price will go **UP**" if prediction[0] == 1 else "📉 The closing price will go **DOWN**")
+    st.write("📉 The closing price will go **DOWN**")
 
