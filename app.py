@@ -5,7 +5,7 @@ import pickle
 
 # Load your trained model (ensure this path is correct)
 # Replace 'model.pkl' with the actual file you saved the model in
-with open("mini_project.py", "rb") as file:
+with open("model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Streamlit app
