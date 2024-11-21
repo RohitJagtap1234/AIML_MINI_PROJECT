@@ -3,10 +3,14 @@ import pandas as pd
 import numpy as np
 import pickle
 
-# Load your trained model (ensure this path is correct)
-# Replace 'model.pkl' with the actual file you saved the model in
-with open("mini_project.py", "rb") as file:
-    model = pickle.load(file)
+# Replace with the path to your trained model or integrate your model's training code here
+from sklearn.ensemble import RandomForestClassifier
+
+# Sample model (replace with your actual trained model)
+# rf = RandomForestClassifier().fit(X_train, y_train)
+# Save and load your model using pickle (example)
+# pickle.dump(rf, open("model.pkl", "wb"))
+# rf = pickle.load(open("model.pkl", "rb"))
 
 # Streamlit app
 st.title("Stock Price Movement Predictor")
@@ -20,16 +24,11 @@ volume = st.number_input("Volume", min_value=0.0, step=1.0)
 
 # Prediction logic
 if st.button("Predict"):
-    try:
-        # Prepare the input data for prediction
-        input_data = np.array([[open_price, high_price, low_price, volume]])
-        prediction = model.predict(input_data)
+    input_data = np.array([[open_price, high_price, low_price, volume]])
+    # Replace `rf` with your actual loaded model
+    # prediction = rf.predict(input_data)
+    prediction = [1]  # Example output (1 = Up, 0 = Down)
 
-        # Display the result
-        st.subheader("Prediction")
-        if prediction[0] == 1:
-            st.write("📈 The closing price will go **UP**.")
-        else:
-            st.write("📉 The closing price will go **DOWN**.")
-    except Exception as e:
-        st.error(f"An error occurred during prediction: {e}")
+    st.subheader("Prediction")
+    st.write("📈 The closing price will go **UP**" if prediction[0] == 1 else "📉 The closing price will go **DOWN**")
+
