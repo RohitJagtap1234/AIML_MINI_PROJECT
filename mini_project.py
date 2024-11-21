@@ -32,8 +32,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load datasets
-df1 = pd.read_csv('/content/drive/MyDrive/bitcoin_test_dataset.csv')
-df2 = pd.read_csv('/content/drive/MyDrive/bitcoin_train_dataset.csv')
+df1 = pd.read_csv('bitcoin_test_dataset.csv')
+df2 = pd.read_csv('bitcoin_train_dataset.csv')
 
 """#### Combining both datasets into one dataframe"""
 
